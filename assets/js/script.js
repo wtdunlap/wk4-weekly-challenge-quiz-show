@@ -1,0 +1,136 @@
+// Access element using id
+const mainContainer = document.getElementById("main-container");
+const headElement = document.getElementById("head-element");
+const headContent = document.getElementById("head-content");
+const bodyElement = document.getElementById("body-element");
+const leftElement = document.getElementById("left-element");
+const rightElement = document.getElementById("right-element");
+const bottomElement = document.getElementById("bottom-element");
+const bottomContent = document.getElementById("bottom-content");
+
+bodyElement.style.justifyContent = "center"; // center content for buttons
+
+// use this to purge children
+//
+// while (list.hasChildNodes()) {
+//   list.removeChild(list.firstChild);
+// }
+// use this to purge children
+
+function clearChildren() {
+    while (leftElement.hasChildNodes()) {
+        leftElement.removeChild(leftElement.firstChild);
+    }
+
+    while (rightElement.hasChildNodes()) {
+        rightElement.removeChild(leftElement.firstChild);
+    }
+}
+
+// create elements for appending content
+const startButton = document.createElement("button");
+const highScoreButton = document.createElement("button");
+
+function createStartPage() {
+    // cleans up the start page
+    clearChildren();
+
+    // hide left element
+    rightElement.style.display = "none";
+    // center content for buttons
+    bodyElement.style.justifyContent = "center";
+
+    // attach elements
+    // ===============
+    leftElement.appendChild(startButton);
+    leftElement.appendChild(highScoreButton);
+
+    // decorate with flex
+    // ==================
+
+    // center content for buttons
+    bodyElement.style.justifyContent = "center";
+    leftElement.style.display = "flex";
+    leftElement.style.flexDirection = "column";
+
+    // decorate in general
+    // ===================
+    mainContainer.style.height = "57vh";
+    mainContainer.style.width = "75vw";
+    mainContainer.style.justifyContent = "center";
+    mainContainer.style.margin = "auto";
+
+    headContent.style.textAlign = "center";
+    headContent.textContent = "Quiz Show!";
+
+    bottomContent.style.textAlign = "center";
+    bottomContent.textContent = "made by BEARS!";
+
+    startButton.style.height = "5vh";
+    startButton.style.width = "25vw";
+    startButton.style.margin = "3rem";
+    startButton.style.backgroundColor = "white";
+    startButton.textContent = "push to start or something";
+
+    highScoreButton.style.height = "5vh";
+    highScoreButton.style.width = "25vw";
+    highScoreButton.style.margin = "3rem";
+    highScoreButton.style.backgroundColor = "white";
+    highScoreButton.textContent = "high scores here";
+}
+
+
+const answerButton1 = document.createElement("button");
+const answerButton2 = document.createElement("button");
+const answerButton3 = document.createElement("button");
+const answerButton4 = document.createElement("button");
+
+
+// take created timer element and add ID
+const timer = document.createElement("div");
+timer.setAttribute("id", "timer-element")
+const timerElement = document.getElementById("timer-element");
+
+
+// function createQuestionPage() {
+// cleans up the question page
+clearChildren();
+
+// hide bottom content
+bottomContent.style.display = "none";
+
+mainContainer.style.height = "57vh";
+mainContainer.style.width = "75vw";
+mainContainer.style.justifyContent = "center";
+mainContainer.style.margin = "auto";
+
+headContent.style.textAlign = "center";
+headContent.textContent = "Questions go here";
+
+leftElement.style.display = "flex";
+rightElement.style.display = "flex";
+
+leftElement.appendChild(answerButton4);
+leftElement.appendChild(answerButton3);
+leftElement.appendChild(answerButton2);
+leftElement.appendChild(answerButton1);
+
+// name all buttons by default
+// call function that does this with question answers
+for (var i = 0; i < leftElement.children.length; i++) {
+  var temp = leftElement.children;
+  temp[i].textContent = "answer button " + (i + 1);
+}
+
+leftElement.style.display = "flex";
+leftElement.style.flexDirection = "column";
+
+rightElement.style.display = "flex";
+rightElement.style.flexDirection = "column";
+rightElement.appendChild(timerElement);
+timerElement.textContent = "butts";
+
+rightElement.style.backgroundColor = "white";
+
+
+// }
