@@ -59,19 +59,23 @@ function createStartPage() {
     mainContainer.style.width = "75vw";
     mainContainer.style.justifyContent = "center";
     mainContainer.style.margin = "auto";
-
+    
+    // head content
     headContent.style.textAlign = "center";
     headContent.textContent = "Quiz Show!";
 
+    // bottom content
     bottomContent.style.textAlign = "center";
     bottomContent.textContent = "made by BEARS!";
 
+    // start button details
     startButton.style.height = "5vh";
     startButton.style.width = "25vw";
     startButton.style.margin = "3rem";
     startButton.style.backgroundColor = "white";
     startButton.textContent = "push to start or something";
 
+    // high score button details
     highScoreButton.style.height = "5vh";
     highScoreButton.style.width = "25vw";
     highScoreButton.style.margin = "3rem";
@@ -138,17 +142,25 @@ for (var i = 0; i < leftElement.children.length; i++) {
 }
 
 bodyElement.style.justifyContent = "space-evenly";
+// right element
 rightElement.style.alignItems = "center";
 rightElement.style.width = "10vw";
+// left element
 leftElement.style.justifyContent = "space-evenly";
 leftElement.style.width = "25vw";
+// high score button
 highScoreButton.style.height = "5vh";
 highScoreButton.style.width = "10vw";
 highScoreButton.style.backgroundColor = "white";
+highScoreButton.style.margin = "1rem";
+// results box
 resultElement.style.height = "5vh";
 resultElement.style.width = "10vw";
+resultElement.style.margin = "1rem";
+// timer box
 timerElement.style.height = "5vh";
 timerElement.style.width = "10vw";
+timerElement.style.margin = "1rem";
 
 }
 
