@@ -84,15 +84,13 @@ const answerButton1 = document.createElement("button");
 const answerButton2 = document.createElement("button");
 const answerButton3 = document.createElement("button");
 const answerButton4 = document.createElement("button");
+const resultElement = document.createElement("div");
+const timerElement = document.createElement("div");
 
+timerElement.setAttribute("id", "timer-element");
+resultElement.setAttribute("id", "result-element");
 
-// take created timer element and add ID
-const timer = document.createElement("div");
-timer.setAttribute("id", "timer-element")
-const timerElement = document.getElementById("timer-element");
-
-
-// function createQuestionPage() {
+function createQuestionPage() {
 // cleans up the question page
 clearChildren();
 
@@ -108,7 +106,24 @@ headContent.style.textAlign = "center";
 headContent.textContent = "Questions go here";
 
 leftElement.style.display = "flex";
+leftElement.style.flexDirection = "column";
+
 rightElement.style.display = "flex";
+rightElement.style.flexDirection = "column";
+rightElement.appendChild(resultElement);
+resultElement.textContent = "right or wrong";
+resultElement.style.textAlign = "center";
+resultElement.style.backgroundColor = "white";
+
+// timer elements
+rightElement.appendChild(timerElement)
+timerElement.textContent = "timer goes here";
+timerElement.style.textAlign = "center";
+timerElement.style.backgroundColor = "white";
+
+// high score button and other buttons
+rightElement.appendChild(highScoreButton);
+highScoreButton.textContent = "high score here";
 
 leftElement.appendChild(answerButton4);
 leftElement.appendChild(answerButton3);
@@ -122,15 +137,20 @@ for (var i = 0; i < leftElement.children.length; i++) {
   temp[i].textContent = "answer button " + (i + 1);
 }
 
-leftElement.style.display = "flex";
-leftElement.style.flexDirection = "column";
+bodyElement.style.justifyContent = "space-evenly";
+rightElement.style.alignItems = "center";
+rightElement.style.width = "10vw";
+leftElement.style.justifyContent = "space-evenly";
+leftElement.style.width = "25vw";
+highScoreButton.style.height = "5vh";
+highScoreButton.style.width = "10vw";
+highScoreButton.style.backgroundColor = "white";
+resultElement.style.height = "5vh";
+resultElement.style.width = "10vw";
+timerElement.style.height = "5vh";
+timerElement.style.width = "10vw";
 
-rightElement.style.display = "flex";
-rightElement.style.flexDirection = "column";
-rightElement.appendChild(timerElement);
-timerElement.textContent = "butts";
+}
 
-rightElement.style.backgroundColor = "white";
-
-
-// }
+createStartPage();
+createQuestionPage();

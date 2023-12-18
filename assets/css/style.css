@@ -9,6 +9,11 @@ html {
     background-image: linear-gradient(pink, white,white);
 }
 
+button {
+    background-color: white;
+    height: 5vh;
+}
+
 #main-container { 
     display:flex;
     flex-direction: column;
